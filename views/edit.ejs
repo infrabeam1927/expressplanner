@@ -1,0 +1,27 @@
+<%- include('./layout/header') %>
+<%- include('./layout/navbar') %>
+
+<div class="add-to-diary">
+    <h1>Edit<span class="green-text"> Planner</span></h1>
+    <form action="/planner/edit/<%= data.id %>?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="<%= data.title %>">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea type="text area" cols="30" rows="5" class="form-control" id="description" name="description"><%= data.description %> </textarea>
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="date" name="date">
+        </div>
+        <input type="submit" value="edit Planner">
+
+    </form>
+</div>
+
+
+
+<%- include('./layout/footer') %>
